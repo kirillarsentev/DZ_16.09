@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+
 
 namespace DZ_16._09
 {
@@ -371,9 +373,141 @@ namespace DZ_16._09
             Console.WriteLine("Введите Y2 : ");
             double y_2 = Convert.ToDouble(Console.ReadLine());
             double dis = Math.Sqrt(Math.Pow(x_1-x_2, 2) + Math.Pow(y_1 - y_2, 2));
-            Console.WriteLine(dis);
-        }
-       
-            
+           Console.WriteLine(dis); 
+
+
+            Console.WriteLine("ДЗ 19. ОБмен значений.Часть а");
+            string a1 = Console.ReadLine();
+            string b1 = Console.ReadLine();
+            string c1 = Console.ReadLine();
+            string d1  = b1;
+            b1 = c1;
+            c1 = a1;
+            a1 = d1;
+
+
+            Console.WriteLine( a1 + " " + b1 + " " + c1);
+            Console.WriteLine("Часть б");
+            d1 = b1;
+            b1 = a1;
+            a1 = c1;
+            c1 = d1;
+            Console.WriteLine(a1 + " " + b1 + " " + c1);
+
+            Console.WriteLine("ДЗ 20");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Прошло " + n / 3600 + " часов");
+            Console.WriteLine("Прошло " + (n % 3600) / 60  + " минут");
+            Console.WriteLine("Прошло " + n / 60 + " секунд");
+
+
+            Console.WriteLine(" ДЗ 21. Отрезать прямоугольник");
+            int size1 = 543;
+            int size2 = 130;
+            int area1 = size1 * size2;
+            int area2 = 130 * 130;
+            Console.WriteLine(area1 / area2);
+
+            Console.WriteLine("ДЗ 22.");
+            Console.WriteLine("Ведите число");
+            string chislo = Console.ReadLine();
+            string chislo1 = chislo.Remove(chislo.Length -1 , 1);
+            Console.WriteLine(chislo[chislo.Length - 1] + chislo1 );
+
+            Console.WriteLine("ДЗ 23");
+            Console.WriteLine("Введите число > 999 :");
+            int chislo_1 = Convert.ToInt32(Console.ReadLine()); 
+            Console.WriteLine("Количество сотен : " + chislo_1 / 100 + '\n' + "Количество тысяч : " + chislo_1 / 1000);
+
+            Console.WriteLine("ДЗ 24");
+            string fournum = Console.ReadLine();
+
+            Console.WriteLine("Число справа налево : " + fournum[3] + fournum[2] + fournum[1] + fournum[0]);
+            Console.WriteLine("После перестановки 1 и 2, 3 и 4 цифры : " + fournum[1] + fournum[0] + fournum[3] + fournum[2]);
+            Console.WriteLine("После перестановки 2 и 3 цифры : " + fournum[0] + fournum[2] + fournum[1] + fournum[3]);
+            Console.WriteLine("После перестановки первых и вторых двух цифр : " + fournum[2] + fournum[3] + fournum[0] + fournum[1]);
+
+            Console.WriteLine("Дз 25");
+            Console.WriteLine("Введите число принадлежащее отрезку [100;999] : ");
+
+
+
+
+            Console.WriteLine("ДЗ 26");
+
+
+
+
+
+
+            Console.WriteLine("ДЗ 27"); 
+
+
+
+
+            Console.WriteLine("ДЗ 28");
+            Console.WriteLine("Введите 3 числа");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            int num3 = Convert.ToInt32(Console.ReadLine());
+            if( Math.Abs(num1) > Math.Abs(num2) & Math.Abs(num1) >  Math.Abs(num3))
+            {
+                Console.WriteLine(num1);
+            }
+            else if(Math.Abs(num2) > Math.Abs(num1) & Math.Abs(num2) > Math.Abs(num3))
+            {
+                Console.WriteLine(num2);
+            }
+            else if(Math.Abs(num3) > Math.Abs(num2) & Math.Abs(num3) > Math.Abs(num1))
+            {
+                Console.WriteLine(num3);
+            }
+            else
+            {
+                Console.WriteLine("Числа одинаковые");
+            }
+
+
+            Console.WriteLine("ДЗ 29");
+            List<double> numbers = new List<double>();
+            numbers.Add(Convert.ToDouble(Console.ReadLine()));
+            numbers.Add(Convert.ToDouble(Console.ReadLine()));
+            numbers.Add(Convert.ToDouble(Console.ReadLine()));
+            Console.WriteLine("Сумма равна: " + (numbers.Min() + numbers.Max())); 
+
+
+            Console.WriteLine("ДЗ 32");
+            Console.WriteLine("Введите первый член прогрессии : ");
+            double prog1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите второй член прогрессии : ");
+            double prog2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите номер элемента прогрессии : ");
+            double n = Convert.ToDouble(Console.ReadLine());
+            double chlenprog = prog1 + ((prog2 - prog1) * (n - 1));
+            Console.WriteLine("Искомый член равен :" + chlenprog);
+
+
+
+
+
+            Console.WriteLine("ДЗ 34");
+            Console.WriteLine("Как вас зовут?");
+            string name = Console.ReadLine();
+            Console.WriteLine(name);
+            Console.WriteLine("Как вас зовут?");
+            string name1 = Console.ReadLine();
+            Console.WriteLine("Здравствуйте, " + name1);
+
+
+
+
+
+
+
+
+
+
+
+        }    
     }       
 }
