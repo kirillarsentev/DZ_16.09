@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.ConstrainedExecution;
@@ -32,9 +33,9 @@ namespace DZ_16._09
             Console.WriteLine("ДЗ 3. Вывести числа столбиком");
             string number = "10 20 30 40";
             string[] numbers = number.Split();
-            foreach (string n in numbers)
+            foreach (string n_1 in numbers)
             {
-                Console.WriteLine(n);
+                Console.WriteLine(n_1);
             }
 
 
@@ -425,42 +426,65 @@ namespace DZ_16._09
             Console.WriteLine("Число справа налево : " + fournum[3] + fournum[2] + fournum[1] + fournum[0]);
             Console.WriteLine("После перестановки 1 и 2, 3 и 4 цифры : " + fournum[1] + fournum[0] + fournum[3] + fournum[2]);
             Console.WriteLine("После перестановки 2 и 3 цифры : " + fournum[0] + fournum[2] + fournum[1] + fournum[3]);
-            Console.WriteLine("После перестановки первых и вторых двух цифр : " + fournum[2] + fournum[3] + fournum[0] + fournum[1]);
+            Console.WriteLine("После перестановки первых и вторых двух цифр : " + fournum[2] + fournum[3] + fournum[0] + fournum[1]); 
 
             Console.WriteLine("Дз 25");
             Console.WriteLine("Введите число принадлежащее отрезку [100;999] : ");
-
+            string chst = Console.ReadLine();
+            string index = Convert.ToString(chst[2]);
+           
+            int chst1 = Convert.ToInt32(chst);
+            int chst2 = (chst1 - Convert.ToInt32(index)) / 10 ;
+            string chst3 = chst[2] + Convert.ToString(chst2);
+            Console.WriteLine(chst3); 
 
 
 
             Console.WriteLine("ДЗ 26");
+            Console.WriteLine("Введите время : часы, минуты, секунды");
+            int hour = Convert.ToInt32(Console.ReadLine());
+            int min = Convert.ToInt32(Console.ReadLine());
+            int sec = Convert.ToInt32(Console.ReadLine());
+            double ugol = ((360 / 12) * hour + (0.5 * min) + (0.0083 * sec));
+            Console.WriteLine(ugol); 
 
 
 
 
 
+            Console.WriteLine("ДЗ 27");
+            Console.WriteLine("Задание 27");
+            double Y = 2; 
+            double clockwise = 57.3 * Y;
+            int hour1 = Convert.ToInt16(Math.Truncate(clockwise / 30));
+            double min1 = clockwise - hour1 * 30;
+            double min2 = min1 * 2;
+            double min3 = min2 * 6;
+            int m = Convert.ToInt32(min2);
+            Console.WriteLine("Угол минутной стрелки :" + min3 +  "градусов, часов " + hour1 + ", полных минут " + m );
 
-            Console.WriteLine("ДЗ 27"); 
+
+
 
 
 
 
             Console.WriteLine("ДЗ 28");
             Console.WriteLine("Введите 3 числа");
-            int num1 = Convert.ToInt32(Console.ReadLine());
-            int num2 = Convert.ToInt32(Console.ReadLine());
-            int num3 = Convert.ToInt32(Console.ReadLine());
-            if( Math.Abs(num1) > Math.Abs(num2) & Math.Abs(num1) >  Math.Abs(num3))
+            int chis1 = Convert.ToInt32(Console.ReadLine());
+            int chis2 = Convert.ToInt32(Console.ReadLine());
+            int chis3 = Convert.ToInt32(Console.ReadLine());
+            if( Math.Abs(chis1) > Math.Abs(chis2) & Math.Abs(chis1) >  Math.Abs(chis3))
             {
-                Console.WriteLine(num1);
+                Console.WriteLine(chis1);
             }
-            else if(Math.Abs(num2) > Math.Abs(num1) & Math.Abs(num2) > Math.Abs(num3))
+            else if(Math.Abs(chis2) > Math.Abs(chis1) & Math.Abs(chis2) > Math.Abs(chis3))
             {
-                Console.WriteLine(num2);
+                Console.WriteLine(chis2);
             }
-            else if(Math.Abs(num3) > Math.Abs(num2) & Math.Abs(num3) > Math.Abs(num1))
+            else if(Math.Abs(chis3) > Math.Abs(chis2) & Math.Abs(chis3) > Math.Abs(chis1))
             {
-                Console.WriteLine(num3);
+                Console.WriteLine(chis3);
             }
             else
             {
@@ -469,11 +493,71 @@ namespace DZ_16._09
 
 
             Console.WriteLine("ДЗ 29");
-            List<double> numbers = new List<double>();
-            numbers.Add(Convert.ToDouble(Console.ReadLine()));
-            numbers.Add(Convert.ToDouble(Console.ReadLine()));
-            numbers.Add(Convert.ToDouble(Console.ReadLine()));
-            Console.WriteLine("Сумма равна: " + (numbers.Min() + numbers.Max())); 
+            List<double> numbers1 = new List<double>();
+            Console.WriteLine("Введите 3 числа");
+            numbers1.Add(Convert.ToDouble(Console.ReadLine()));
+            numbers1.Add(Convert.ToDouble(Console.ReadLine()));
+            numbers1.Add(Convert.ToDouble(Console.ReadLine()));
+            Console.WriteLine("Сумма равна: " + (numbers1.Min() + numbers1.Max()));
+
+
+
+            Console.WriteLine("ДЗ 30");
+            Console.WriteLine("Ведите число");
+            int digit1 = Convert.ToInt32(Console.ReadLine());
+            int count1 = 0;
+            int i1 = 1;
+            while(i1 <= digit1)
+            {
+                if (digit1 % i1 == 0)
+                {
+                    count1 += 1;
+
+                }
+                i1 += 1;
+            }
+            Console.WriteLine(count1);
+
+
+
+            Console.WriteLine("ДЗ 31");
+            List<double> roots = new List<double>();
+            double kf_a = double.Parse(Console.ReadLine());
+            double kf_b = double.Parse(Console.ReadLine());
+            double kf_c = double.Parse(Console.ReadLine());
+            double kf_d = double.Parse(Console.ReadLine());
+            int count = -100;
+            int root = -100;
+            while (count <= 100)
+            {
+                if ((kf_a * Math.Pow(root, 3) + (kf_b * Math.Pow(root, 2)) + (kf_c * root) + kf_d) == 0)
+                {
+                    roots.Add(root);
+
+                }
+                count += 1;
+                root += 1;
+
+            }
+            int colroots = roots.Count;
+            if (colroots == 1)
+            {
+                Console.WriteLine("Уравнение имеет 1 корень: " + roots[0]);
+
+            }
+            else if (colroots == 2)
+            {
+                Console.WriteLine("Уравнение имеет 2 корня: " + '\n' + "Первый корень: " + roots[0] + '\n' + "Второй корень: " + roots[1]);
+            }
+
+            else if (colroots == 3)
+            {
+                Console.WriteLine("Уравнение имеет 3 корня: " + '\n' + "Первый корень: " + roots[0] + '\n' + "Второй корень: " + roots[1] + '\n' + "Третий корень" + roots[2]);
+            }
+            else
+            {
+                Console.WriteLine("Уравнение не имеет корней");
+            }
 
 
             Console.WriteLine("ДЗ 32");
@@ -482,9 +566,33 @@ namespace DZ_16._09
             Console.WriteLine("Введите второй член прогрессии : ");
             double prog2 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите номер элемента прогрессии : ");
-            double n = Convert.ToDouble(Console.ReadLine());
-            double chlenprog = prog1 + ((prog2 - prog1) * (n - 1));
-            Console.WriteLine("Искомый член равен :" + chlenprog);
+            double n1 = Convert.ToDouble(Console.ReadLine());
+            double chlenprog = prog1 + ((prog2 - prog1) * (n1 - 1));
+            Console.WriteLine("Искомый член равен :" + chlenprog); 
+
+
+
+            Console.WriteLine("ДЗ 33");
+
+            Console.WriteLine("Введите информацию о себе");
+            Console.WriteLine("Вы пенсионер?");
+            string infa1 = Console.ReadLine();
+            Console.WriteLine("Вы студент?");
+            string infa2 = Console.ReadLine();
+            Console.WriteLine("Вы трудоустроен?");
+            string infa3 = Console.ReadLine();
+
+            if ((infa1 == "да" && infa3 == "нет") || (infa2 == "да" && infa3 == "нет"))
+            {
+                Console.WriteLine("Соболезную! Вам одобрили кредит");
+
+            }
+            else
+            {
+                Console.WriteLine("Вам не одобрили кредит");
+            }
+
+
 
 
 
@@ -496,18 +604,89 @@ namespace DZ_16._09
             Console.WriteLine(name);
             Console.WriteLine("Как вас зовут?");
             string name1 = Console.ReadLine();
-            Console.WriteLine("Здравствуйте, " + name1);
+            Console.WriteLine("Здравствуйте, " + name1); 
+
+            
+            
+            Console.WriteLine("ДЗ 35");
+            Random random = new Random();
+
+            Console.ReadLine();
+            Console.WriteLine("Как тебя зовут?");
+            string name2 = Console.ReadLine();
+            Console.WriteLine("Привет, " + name2);
+            Console.ReadLine();
+            Console.WriteLine("Да");
+            Console.ReadLine();
+            Console.WriteLine("Нет");
+            
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("Но могу показать");
+            
+            int color = random.Next(1, 10);
+
+            while (color > 0)
+            {
+                Console.BackgroundColor++;
+                color--;
+            }
+            Console.Clear();
+
+            System.Threading.Thread.Sleep(5000);
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Clear();
+            Console.WriteLine("ДЗ 36");
+            Random r = new Random();
+            double Result = 0;
+
+            Result = r.NextDouble(); 
+            Result *= Math.Pow(10, 12);
+            Result = Math.Round(Result);
+            Console.WriteLine(Result);
+            int chet = 0, nechet = 0,i = 12, sum = 0;
+            while (i > 0)
+            {
+                if (i % 2 == 0)
+                    chet += (int)(Result % 10);
+                else
+                    nechet += (int)(Result % 10);
+
+                i--;
+                Result /= 10;
+            }
+            chet *= 3;
+            sum = chet + nechet;
+            if (sum % 10 != 0)
+                chet = (sum / 10) * 10 + 10;
+            Console.WriteLine(chet - sum);
 
 
 
 
-
-
-
-
-
-
-
-        }    
-    }       
+        }
+    }
 }
+
+
+
+
+
+            
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+    
+          
+
