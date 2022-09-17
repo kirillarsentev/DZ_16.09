@@ -635,7 +635,9 @@ namespace DZ_16._09
             System.Threading.Thread.Sleep(5000);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
-            Console.WriteLine("ДЗ 36");
+
+
+            /*Console.WriteLine("ДЗ 36");
             Random r = new Random();
             double Result = 0;
 
@@ -658,7 +660,7 @@ namespace DZ_16._09
             sum = chet + nechet;
             if (sum % 10 != 0)
                 chet = (sum / 10) * 10 + 10;
-            Console.WriteLine(chet - sum);
+            Console.WriteLine(chet - sum);*/
 
 
 
